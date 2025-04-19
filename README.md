@@ -1,3 +1,25 @@
+# Red Wine Quality Prediction
+
+This project aims to predict the quality of red wine based on various physicochemical features. We utilize machine learning classification models to build a predictive system. The dataset used for this project contains attributes related to wine quality, including features like acidity, sugar content, pH, alcohol percentage, and more. The primary goal is to classify the wine quality into three categories: low, medium, and high.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+- [Setup & Installation](#setup--installation)
+- [Data Description](#data-description)
+- [Modeling & Evaluation](#modeling--evaluation)
+- [Conclusions](#conclusions)
+- [License](#license)
+
+## Project Overview
+
+In this project, we build a classification model to predict the quality of red wine based on its physicochemical attributes. The main steps include:
+
+1. **Data Exploration**: Analyzing and understanding the dataset.
+2. **Data Preparation**: Cleaning the data, encoding the target variable, and splitting the dataset into training and testing sets.
+3. **Model Selection**: Evaluating several classification models, including Random Forest and MLP Classifier, to identify the best model for predicting wine quality.
+4. **Performance Evaluation**: Using performance metrics such as accuracy and F1-score to evaluate and compare the models.
+
 ## Setup & Installation
 
 ### Clone the Repository
