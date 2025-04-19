@@ -32,7 +32,8 @@ Ensure you have Python 3.x installed on your machine. This project also requires
 
 ```bash
 git clone https://github.com/yourusername/wine-quality-prediction.git
-cd wine-quality-prediction
+cd wine-quality-prediction```
+
 Create and Activate Virtual Environment
 bash
 Copy code
