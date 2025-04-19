@@ -1,93 +1,111 @@
-# ml-05
+# Red Wine Quality Prediction
 
-Implement and evaluate more complex models when simpler techniques aren't enough. 
+This project aims to predict the quality of red wine based on various physicochemical features. We utilize machine learning classification models to build a predictive system. The dataset used for this project contains attributes related to wine quality, including features like acidity, sugar content, pH, alcohol percentage, and more. The primary goal is to classify the wine quality into three categories: low, medium, and high.
 
----
+## Table of Contents
 
-## Get Started
+- [Project Overview](#project-overview)
+- [Setup & Installation](#setup--installation)
+- [Data Description](#data-description)
+- [Modeling & Evaluation](#modeling--evaluation)
+- [Conclusions](#conclusions)
+- [License](#license)
 
-1. Copy template repo to your GitHub account. 
-2. Clone your repo down to your machine. 
-3. Open your project repository folder in VS Code.
- 
----
+## Project Overview
 
-## Windows Setup Instructions
+In this project, we build a classification model to predict the quality of red wine based on its physicochemical attributes. The main steps include:
 
-Open a PowerShell terminal in VS Code. 
-Create local project virtual environment, activate it, and install packages. 
-When asked to use the new .venv click yes. 
+1. **Data Exploration**: Analyzing and understanding the dataset.
+2. **Data Preparation**: Cleaning the data, encoding the target variable, and splitting the dataset into training and testing sets.
+3. **Model Selection**: Evaluating several classification models, including Random Forest and MLP Classifier, to identify the best model for predicting wine quality.
+4. **Performance Evaluation**: Using performance metrics such as accuracy and F1-score to evaluate and compare the models.
 
-Important: Install from requirements first with scikit-learn commented out. 
-Then remove the leading hashmark (around line 187) and re-run the command to install scikit-learn.
-See requirements.txt for more information. 
+## Setup & Installation
+
+Follow the steps below to set up the environment and run the project.
+
+### Prerequisites
+
+Ensure you have Python 3.x installed on your machine. This project also requires some Python libraries which you can install using `pip`.
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/wine-quality-prediction.git
+cd wine-quality-prediction
+Create and Activate Virtual Environment
+bash
+Copy code
+python -m venv .venv
+source .venv/bin/activate  # On Windows, use .venv\Scripts\activate
+Install Dependencies
+bash
+Copy code
+pip install -r requirements.txt
+You can create the requirements.txt file using:
+
+bash
+Copy code
+pip freeze > requirements.txt
+Data File
+Download the dataset (winequality-red.csv) from UCI Wine Quality Data and save it in the root directory of the project.
+
+Data Description
+The dataset contains 1599 samples and 12 columns:
+
+Features:
+fixed acidity: Mostly tartaric acid.
+
+volatile acidity: Mostly acetic acid (vinegar).
+
+citric acid: Can add freshness and flavor.
+
+residual sugar: Remaining sugar after fermentation.
+
+chlorides: Salt content.
+
+free sulfur dioxide: Protects wine from microbes.
+
+total sulfur dioxide: Sum of free and bound forms.
+
+density: Related to sugar content.
+
+pH: Acidity level (lower = more acidic).
+
+sulphates: Antioxidant and microbial stabilizer.
+
+alcohol: % alcohol by volume.
+
+Target Variable:
+quality: Integer score (0 to 10) rated by wine tasters. For modeling purposes, we categorize this into three labels:
+
+Low: Quality 3-4
+
+Medium: Quality 5-6
+
+High: Quality 7-8
+
+Modeling & Evaluation
+Data Preprocessing
+Data Cleaning: Missing values and outliers are handled (if applicable).
+
+Feature Engineering: We convert the quality target variable into labels (low, medium, high) and numeric labels (0, 1, 2) for classification.
+
+Models Evaluated:
+We evaluate the following machine learning models for wine quality prediction:
+
+Random Forest (200 trees, max_depth=10)
+
+MLP Classifier (Multilayer Perceptron neural network)
+
+Evaluation Metrics:
+Models are evaluated using the following metrics:
+
+Accuracy: Measures the overall accuracy of the model.
+
+F1-Score: Weighted average of precision and recall, providing a balance between the two.
+
+Performance Summary
+The Random Forest model achieved a test accuracy of 88.12% and an F1 score of 85.96%. On the other hand, the MLP Classifier showed a test accuracy of 84.38% and an F1 score of 80.73%.
 
 
-```shell
-py -m venv .venv
-.\.venv\Scripts\activate
-py -m pip install --upgrade pip setuptools wheel
-py -m pip install -r requirements.txt
-py -m pip install -r requirements.txt
-
-```
----
-
-## Mac/Linux Setup Instructions
-
-Open a default terminal in VS Code. 
-Create local project virtual environment, activate it, and install packages. 
-Important: Install from requirements first with scikit-learn commented out. 
-Then remove the leading hashmark (around line 187) and re-run the command to install scikit-learn.
-See requirements.txt for more information. 
-
-```zsh
-python3 -m venv .venv
-source .venv/bin/activate
-python3 -m pip install --upgrade pip setuptools wheel
-python3 -m pip install -r requirements.txt
-python3 -m pip install -r requirements.txt
-```
----
-
-## Tell VS Code to use .venv
-
-Open the Command Palette: Press Ctrl + Shift + P (Windows) or Cmd + Shift + P (Mac/Linux)
-Then type: Python: Select Interpreter
-Press Enter.
-
-Look for the interpreter with .venv in the path.
-Click on that interpreter to select it.
-Confirm it's selected: You should see the Python version and .venv path in the lower-left status bar of VS Code.
-
----
-
-## Working on the Project
-
-Open the .ipynb Jupyter notebook file in VS Code. 
-Run the entire notebook before you start to edit. 
-As you make progress, use Git to add, commit, and push your work to your GitHub repo.
-
-```shell
-git add .
-git commit -m "describe the change here"
-git push -u origin main
-```
-
-For additional information and suggestions, follow the process for professional Project Setup / Initialization / Standard Workflow in
-[pro-analytics-01](https://github.com/denisecase/pro-analytics-01)
-
-## Dataset Source
-
-The Wine Quality Dataset is made available by the UCI Machine Learning Repository.
-
-[https://archive.ics.uci.edu/ml/datasets/Wine+Quality](https://archive.ics.uci.edu/ml/datasets/Wine+Quality)
-
-Data originally published by:
-P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis.  
-Modeling wine preferences by data mining from physicochemical properties.  
-In *Decision Support Systems*, Elsevier, 47(4):547–553, 2009.
-
-Direct download link to raw csv:
-
-<https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv>
